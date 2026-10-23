@@ -403,7 +403,9 @@ export function initUI({ DATA, parts, camera, actions }) {
   }
   function renderAbout() {
     $('about-text').textContent = ABOUT?.[state.lang] ?? '';
-    $('about-credits').textContent = `${t('credits')} ${t('disclaimer')}`;
+    $('about-fan-title').textContent = t('fanTitle');
+    $('about-fan-text').textContent = t('fanText');
+    $('about-credits').textContent = t('credits');
     $('about-src-title').textContent = t('sourcesTitle');
     const ul = $('about-src');
     ul.replaceChildren();
@@ -440,6 +442,7 @@ export function initUI({ DATA, parts, camera, actions }) {
     $('t-maint').textContent = t('maintenance');
     $('t-specs').textContent = t('specs');
     $('t-about').textContent = t('about');
+    $('t-fan').textContent = t('fan');
     $('hint').textContent = touch ? t('hintTouch') : t('hint');
     if ($('intro-skip')) $('intro-skip').textContent = t('skipIntro');
     $('btn-reset').setAttribute('aria-label', t('reset'));

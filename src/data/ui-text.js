@@ -42,7 +42,9 @@ export const UI_TEXT = {
     prev: 'Předchozí',
     next: 'Další',
     zoom: 'Zvětšit',
-    disclaimer: 'Neoficiální projekt bez vazby na BMW AG. Název a logo BMW patří BMW AG.',
+    fan: 'Neoficiální fanouškovský projekt · BMW za ním nestojí',
+    fanTitle: 'Neoficiální fanouškovský projekt',
+    fanText: 'Nevznikl ve spolupráci s BMW AG ani BMW Group Classic a není to oficiální dokumentace BMW. BMW a logo BMW jsou ochranné známky BMW AG. Je to ukázka toho, co dnes jde udělat s AI: model, kód i texty vznikly s pomocí AI (Claude) podle dobových pramenů.',
   },
   en: {
     kicker: 'Interactive 3D manual',
@@ -86,7 +88,9 @@ export const UI_TEXT = {
     prev: 'Previous',
     next: 'Next',
     zoom: 'Enlarge',
-    disclaimer: 'Unofficial project, not affiliated with BMW AG. The BMW name and logo belong to BMW AG.',
+    fan: 'Unofficial fan project · not made or endorsed by BMW',
+    fanTitle: 'Unofficial fan project',
+    fanText: 'Not made with or endorsed by BMW AG or BMW Group Classic, and not official BMW documentation. BMW and the BMW logo are trademarks of BMW AG. A showcase of what can be done with AI today: the model, code and texts were made with AI (Claude) from period sources.',
   },
   de: {
     kicker: 'Interaktives 3D-Handbuch',
@@ -130,6 +134,8 @@ export const UI_TEXT = {
     prev: 'Zurück',
     next: 'Weiter',
     zoom: 'Vergrößern',
-    disclaimer: 'Inoffizielles Projekt ohne Verbindung zur BMW AG. Name und Logo BMW gehören der BMW AG.',
+    fan: 'Inoffizielles Fanprojekt · nicht von BMW',
+    fanTitle: 'Inoffizielles Fanprojekt',
+    fanText: 'Nicht in Zusammenarbeit mit der BMW AG oder BMW Group Classic entstanden und keine offizielle BMW-Dokumentation. BMW und das BMW-Logo sind Marken der BMW AG. Ein Beispiel dafür, was heute mit KI möglich ist: Modell, Code und Texte sind mit KI (Claude) nach zeitgenössischen Quellen entstanden.',
   },
 };

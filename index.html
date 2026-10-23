@@ -55,6 +55,9 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid 
 .mast h1 { margin: 0; font-family: var(--display); font-weight: 400; font-size: var(--fs-title); line-height: 1; letter-spacing: 0.01em; color: var(--fg); white-space: nowrap; }
 .mast h1 span { color: var(--accent); }
 .mast .meta { margin: 0; font-size: var(--fs-small); color: var(--fg-2); }
+.mast .fan { margin: -3px 0 0; font-size: 10.5px; color: var(--muted); }
+.fan-note { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; display: grid; gap: 4px; }
+.fan-note .label { margin: 0; color: var(--accent); }
 .author { display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 9px; pointer-events: auto; text-decoration: none; color: inherit; }
 .author img { width: 28px; height: 28px; border-radius: 50%; display: block; flex: none; }
 .author b { display: block; font-family: var(--display); font-weight: 400; font-size: 15px; line-height: 1.05; letter-spacing: 0.03em; text-transform: uppercase; color: var(--fg); }
@@ -214,6 +217,7 @@ body:not(.ui-ready) .masthead, body:not(.ui-ready) .toolbar, body:not(.ui-ready)
     <p class="eb" id="t-kicker">Interaktivní 3D manuál</p>
     <h1>BMW <span>R 12</span></h1>
     <p class="meta" id="t-meta">1935–1942 · první motorka s teleskopickou vidlicí a hydraulickým tlumením</p>
+    <p class="fan" id="t-fan">Neoficiální fanouškovský projekt · BMW za ním nestojí</p>
     <a class="author" href="https://lukasersil.com" target="_blank" rel="noopener">
       <img src="assets/avatar.png" alt="" width="28" height="28">
       <span><b>Lukáš Eršil</b><small>lukasersil.com</small></span>
@@ -305,6 +309,7 @@ body:not(.ui-ready) .masthead, body:not(.ui-ready) .toolbar, body:not(.ui-ready)
       <div><p class="eb">1935–1942</p><h2 class="h-card" id="about-title">BMW R 12</h2></div>
       <button class="close-btn" data-close type="button" aria-label="Zavřít"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 2l8 8M10 2l-8 8"/></svg></button>
     </div>
+    <div class="fan-note"><p class="label" id="about-fan-title">Neoficiální fanouškovský projekt</p><p id="about-fan-text"></p></div>
     <p id="about-text"></p>
     <p id="about-credits"></p>
     <div><p class="label" id="about-src-title">Zdroje</p><ul id="about-src"></ul></div>
