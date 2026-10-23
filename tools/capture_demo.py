@@ -8,6 +8,7 @@ OUT = sys.argv[1]
 FPS = int(sys.argv[2]) if len(sys.argv) > 2 else 30
 DT = 1000 / FPS
 W, H = 1280, 720           # CSS px; rendered at 1.5x = 1920 x 1080, so the UI reads at video size
+DSF = float(os.environ.get('DSF', '1.5'))   # DSF=3 renders 3840 x 2160 for a supersampled 1080p master
 os.makedirs(OUT, exist_ok=True)
 
 CLOCK = """
@@ -103,7 +104,7 @@ class Rec:
     async def frames(self, k):
         for _ in range(int(round(k))):
             await self.pg.evaluate(f'__vtStep({DT}); __capLayout()')
-            await self.pg.screenshot(path=f'{OUT}/f{self.n:05d}.jpg', type='jpeg', quality=93)
+            await self.pg.screenshot(path=f'{OUT}/f{self.n:05d}.jpg', type='jpeg', quality=95 if DSF > 1.5 else 93)
             self.n += 1
 
     async def secs(self, s):
@@ -170,7 +171,7 @@ class Rec:
 async def main():
     async with async_playwright() as p:
         b = await p.chromium.launch(channel='chrome', headless=True, args=['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist'])
-        ctx = await b.new_context(viewport={'width': W, 'height': H}, device_scale_factor=1.5, locale='cs-CZ')
+        ctx = await b.new_context(viewport={'width': W, 'height': H}, device_scale_factor=DSF, locale='cs-CZ')
         await ctx.add_init_script(CLOCK)
         await ctx.add_init_script("try { localStorage.setItem('r12-lang', 'cz'); } catch (e) {}")
         pg = await ctx.new_page()
